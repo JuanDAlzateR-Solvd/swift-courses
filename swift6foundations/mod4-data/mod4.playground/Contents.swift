@@ -78,5 +78,70 @@ print(shoppingList)
 shoppingList+=["cheese", "tomatoes"]
 print(shoppingList)
 
-let removedItem = shoppingList.removeLast()
+let removedItem = shoppingList.remove(at: 2)
+print("removed item \(removedItem)")
+print(shoppingList)
+print("The list has \(shoppingList.count) items")
 
+let firstItem = shoppingList.first ?? "the list is empty"
+let lastItem = shoppingList.last ?? "the list is empty"
+print("the first item is: \(firstItem)")
+print("the last item is: \(lastItem)")
+
+print("""
+
+######## Sets ########
+
+""")
+
+var uniqueNumbers: Set<Int> = [1, 2, 3, 4, 5, 4, 3]
+
+var moreNumbers: Set<Int> = [ 4, 5, 6, 7, 8, 9]
+
+var movies: Set<String> = ["Pulp Fiction", "Inception", "Interstellar"]
+
+print(uniqueNumbers)
+
+print(uniqueNumbers.contains(5))
+
+print(uniqueNumbers.intersection(moreNumbers))
+
+let removedNumber = uniqueNumbers.remove(10)
+
+print(removedNumber ?? "Number not removed")
+
+print("""
+
+######## Dictionaries ########
+
+""")
+
+var userages: [String: Int] = [:]
+
+let countryCapitals: [String: String] =
+["France": "Paris", "Spain": "Madrid", "Italy": "Rome"]
+
+let franceCapital = countryCapitals["France"] ?? "Unknown"
+print(franceCapital)
+
+let colombiaCapital = countryCapitals["Colombia"] ?? "Unknown"
+print(colombiaCapital)
+
+//Essential dictionary methods
+var inventory: [String: Int] = ["apples": 36, "grapes": 12, "bananas": 13]
+inventory["bananas"] = 0
+inventory["bananas", default: 0] += 3
+inventory["oranges"] = 50
+
+let oldApplesCount = inventory.updateValue(25, forKey: "apples")
+
+print("previous count of apples: \(oldApplesCount ?? 0)")
+
+//remove values
+inventory["bananas"]=nil
+
+print(inventory)
+
+let allFruits = inventory.keys
+
+let allQuantities = inventory.values
