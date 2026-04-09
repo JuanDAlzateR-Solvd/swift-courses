@@ -19,6 +19,7 @@ print(welcomeMessage)
 
 //##########
 //Type inference
+//##########
 
 let e = 2.71828
 let typee = type(of: e)
